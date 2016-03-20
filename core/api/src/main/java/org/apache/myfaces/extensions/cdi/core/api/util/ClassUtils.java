@@ -18,14 +18,18 @@
  */
 package org.apache.myfaces.extensions.cdi.core.api.util;
 
+<<<<<<< HEAD
 import javax.enterprise.inject.Typed;
 import java.security.AccessController;
 import java.security.PrivilegedAction;
+=======
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 import java.util.jar.Manifest;
 import java.util.jar.Attributes;
 import java.net.URL;
 
 /**
+<<<<<<< HEAD
  * Util methods for classes, {@link ClassLoader} and {@link Manifest} handling
  */
 @Typed()
@@ -119,6 +123,14 @@ public abstract class ClassUtils
      * @param name name of the class
      * @return loaded class or null if it isn't in the classpath
      */
+=======
+ * keep in sync with extval!
+ *
+ * @author Gerhard Petracek
+ */
+public class ClassUtils
+{
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     public static Class tryToLoadClassForName(String name)
     {
         try
@@ -132,24 +144,32 @@ public abstract class ClassUtils
         }
     }
 
+<<<<<<< HEAD
     /**
      * Loads class for the given name
      * @param name name of the class
      * @return loaded class
      * @throws ClassNotFoundException if the class can't be loaded
      */
+=======
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     public static Class loadClassForName(String name) throws ClassNotFoundException
     {
         try
         {
             // Try WebApp ClassLoader first
             return Class.forName(name, false, // do not initialize for faster startup
+<<<<<<< HEAD
                     getClassLoader(null));
+=======
+                Thread.currentThread().getContextClassLoader());
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
         }
         catch (ClassNotFoundException ignore)
         {
             // fallback: Try ClassLoader for ClassUtils (i.e. the myfaces.jar lib)
             return Class.forName(name, false, // do not initialize for faster startup
+<<<<<<< HEAD
                     ClassUtils.class.getClassLoader());
         }
     }
@@ -160,19 +180,30 @@ public abstract class ClassUtils
      * @param <T> current type
      * @return created instance or null if the instantiation failed
      */
+=======
+                ClassUtils.class.getClassLoader());
+        }
+    }
+
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     public static <T> T tryToInstantiateClass(Class<T> targetClass)
     {
         try
         {
             return targetClass.newInstance();
         }
+<<<<<<< HEAD
         catch (Exception e)
+=======
+        catch (Throwable t)
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
         {
             //do nothing - it was just a try
         }
         return null;
     }
 
+<<<<<<< HEAD
     /**
      * Tries to instantiate a class for the given name and type via the default constructor
      * @param className name of the class
@@ -193,19 +224,39 @@ public abstract class ClassUtils
      * @param className name of the class
      * @return created instance or null if the instantiation failed
      */
-    public static Object tryToInstantiateClassForName(String className)
+=======
+    public static <T> T tryToInstantiateClass(Class targetClass, Class<T> type)
     {
         try
         {
-            return instantiateClassForName(className);
+            return (T)targetClass.newInstance();
         }
-        catch (Exception e)
+        catch (Throwable t)
         {
             //do nothing - it was just a try
         }
         return null;
     }
 
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
+    public static Object tryToInstantiateClassForName(String className)
+    {
+        try
+        {
+            return instantiateClassForName(className);
+        }
+<<<<<<< HEAD
+        catch (Exception e)
+=======
+        catch (Throwable t)
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
+        {
+            //do nothing - it was just a try
+        }
+        return null;
+    }
+
+<<<<<<< HEAD
     /**
      * Creates an instance for the given class-name
      * @param className name of the class which should be instantiated
@@ -216,10 +267,15 @@ public abstract class ClassUtils
      */
     public static Object instantiateClassForName(String className)
             throws ClassNotFoundException, IllegalAccessException, InstantiationException
+=======
+    public static Object instantiateClassForName(String className)
+        throws ClassNotFoundException, IllegalAccessException, InstantiationException
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     {
         return loadClassForName(className).newInstance();
     }
 
+<<<<<<< HEAD
     /**
      * Reads the version of the jar which contains the given class
      * @param targetClass class within the jar
@@ -248,17 +304,34 @@ public abstract class ClassUtils
     public static String getRevision(Class targetClass)
     {
         String manifestFileLocation = getManifestFileLocationOfClass(targetClass);
+=======
+    public static String getJarVersion(Class targetClass)
+    {
+        String classFilePath = targetClass.getCanonicalName().replace('.', '/') + ".class";
+        String manifestFilePath = "/META-INF/MANIFEST.MF";
+
+        String classLocation = targetClass.getResource(targetClass.getSimpleName() + ".class").toString();
+        String manifestFileLocation = classLocation
+                .substring(0, classLocation.indexOf(classFilePath) - 1) + manifestFilePath;
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 
         try
         {
             return new Manifest(new URL(manifestFileLocation).openStream())
+<<<<<<< HEAD
                     .getMainAttributes().getValue("Revision");
         }
         catch (Exception e)
+=======
+                    .getMainAttributes().getValue(Attributes.Name.IMPLEMENTATION_VERSION);
+        }
+        catch (Throwable t)
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
         {
             return null;
         }
     }
+<<<<<<< HEAD
 
     private static String getManifestFileLocationOfClass(Class targetClass)
     {
@@ -284,4 +357,6 @@ public abstract class ClassUtils
         String classLocation = targetClass.getResource(targetClass.getSimpleName() + ".class").toString();
         return classLocation.substring(0, classLocation.indexOf(classFilePath) - 1) + manifestFilePath;
     }
+=======
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 }
