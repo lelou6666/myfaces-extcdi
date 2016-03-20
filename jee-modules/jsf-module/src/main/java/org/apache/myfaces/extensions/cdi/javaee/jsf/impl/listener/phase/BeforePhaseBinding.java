@@ -16,18 +16,12 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.javaee.jsf.impl.listener.phase;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+import org.apache.myfaces.extensions.cdi.javaee.jsf.api.listener.phase.annotation.BeforePhase;
+
+import javax.enterprise.util.AnnotationLiteral;
+
+abstract class BeforePhaseBinding extends AnnotationLiteral<BeforePhase> implements BeforePhase
 {
-    public static boolean isEmpty(String string)
-    {
-        return string == null || "".equals(string);
-    }
 }

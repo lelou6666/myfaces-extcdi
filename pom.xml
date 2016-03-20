@@ -30,7 +30,11 @@
 
     <groupId>org.apache.myfaces.extensions.cdi</groupId>
     <artifactId>myfaces-extcdi-module</artifactId>
+<<<<<<< HEAD
     <version>1.0.0-SNAPSHOT</version>
+=======
+    <version>1.2.1-SNAPSHOT</version>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     <packaging>pom</packaging>
     <name>Apache MyFaces CODI</name>
     <url>http://myfaces.apache.org/extensions/cdi</url>
@@ -63,13 +67,20 @@
     module and then on each module listed below. 
      -->
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     <modules>
         <module>parent</module>
         <module>core</module>
         <module>jee-modules</module>
         <!--module>test-modules</module-->
         <module>examples</module>
+<<<<<<< HEAD
+=======
+        <!--module>documentation</module-->
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     </modules>
 
     <profiles>

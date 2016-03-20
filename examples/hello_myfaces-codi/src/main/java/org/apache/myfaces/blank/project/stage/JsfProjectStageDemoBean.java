@@ -16,18 +16,21 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.blank.project.stage;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+import org.apache.myfaces.extensions.cdi.javaee.jsf.api.project.stage.JsfProjectStage;
+
+import javax.enterprise.inject.Model;
+import javax.inject.Inject;
+
+@Model
+public class JsfProjectStageDemoBean
 {
-    public static boolean isEmpty(String string)
+    @Inject
+    private JsfProjectStage jsfProjectStage;
+
+    public String getProjectStageName()
     {
-        return string == null || "".equals(string);
+        return this.jsfProjectStage.toString();
     }
 }

@@ -34,7 +34,11 @@
 
     <groupId>org.apache.myfaces.extensions.cdi</groupId>
     <artifactId>myfaces-extcdi-parent</artifactId>
+<<<<<<< HEAD
     <version>1.0.0-SNAPSHOT</version>
+=======
+    <version>1.2.1-SNAPSHOT</version>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     <packaging>pom</packaging>
     <name>Apache MyFaces Extensions-CDI Project Parent</name>
     <url>http://myfaces.apache.org/extensions/CDI12</url>
@@ -57,6 +61,7 @@
             </notifier>
         </notifiers>
     </ciManagement>
+<<<<<<< HEAD
 
     <inceptionYear>2008</inceptionYear>
 
@@ -241,6 +246,11 @@
     </dependencies>
 
 
+=======
+    
+    <inceptionYear>2008</inceptionYear>
+
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     <build>
         <resources>
             <resource>
@@ -291,8 +301,13 @@
                             <tasks>
                                 <copy todir="${project.build.directory}/apidocs/META-INF">
                                     <fileset dir="${basedir}">
+<<<<<<< HEAD
                                         <include name="LICENSE.txt"/>
                                         <include name="NOTICE.txt"/>
+=======
+                                        <include name="LICENSE.txt" />
+                                        <include name="NOTICE.txt" />
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
                                     </fileset>
                                 </copy>
                             </tasks>
@@ -307,9 +322,14 @@
                         <configuration>
                             <tasks>
                                 <!-- Copy javadoc to another directory, to keep javadoc of previous versions on site -->
+<<<<<<< HEAD
                                 <copy todir="${project.build.directory}/site/apidocs-${project.version}"
                                       failonerror="false">
                                     <fileset dir="${project.build.directory}/site/apidocs"/>
+=======
+                                <copy todir="${project.build.directory}/site/apidocs-${project.version}" failonerror="false">
+                                  <fileset dir="${project.build.directory}/site/apidocs"/>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
                                 </copy>
                             </tasks>
                         </configuration>
@@ -323,7 +343,11 @@
                 - projects may redeclare this plugin and provide different configuration settings
                 - to use different checks (more or less strict than the default).
             -->
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
@@ -342,7 +366,11 @@
                     <headerLocation>default/myfaces-header.txt</headerLocation>
                 </configuration>
             </plugin>
+<<<<<<< HEAD
 
+=======
+            
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 
             <plugin>
                 <!-- Set compile source at 1.5, since the target JSF impl is 1.2 -->
@@ -353,7 +381,11 @@
                     <target>1.5</target>
                     <optimize>false</optimize>
                 </configuration>
+<<<<<<< HEAD
             </plugin>
+=======
+            </plugin>            
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
         </plugins>
     </build>
 
@@ -410,10 +442,16 @@
     </reporting>
 
     <scm>
+<<<<<<< HEAD
         <connection>scm:svn:http://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_0_0_rc/parent</connection>
         <developerConnection>scm:svn:https://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_0_0_rc/parent
         </developerConnection>
         <url>http://svn.apache.org/viewvc/myfaces/extensions/cdi/branches/1_0_0_rc/parent</url>
+=======
+        <connection>scm:svn:http://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_2_1_rc/parent</connection>
+        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_2_1_rc/parent</developerConnection>
+        <url>http://svn.apache.org/viewvc/myfaces/extensions/cdi/branches/1_2_1_rc/parent</url>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     </scm>
 
     <distributionManagement>

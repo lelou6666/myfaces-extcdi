@@ -16,18 +16,24 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.javaee.jsf.impl.project.stage;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+public enum JsfProjectStageEnum
 {
-    public static boolean isEmpty(String string)
+    Development("Development"),
+    UnitTest("UnitTest"),
+    SystemTest("SystemTest"),
+    Production("Production");
+
+    private final String value;
+
+    JsfProjectStageEnum(String value)
     {
-        return string == null || "".equals(string);
+        this.value = value;
+    }
+
+    String getProjectStageName()
+    {
+        return this.value;
     }
 }

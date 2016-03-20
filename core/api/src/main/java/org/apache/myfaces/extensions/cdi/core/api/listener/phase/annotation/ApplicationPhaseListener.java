@@ -16,18 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.core.api.listener.phase.annotation;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+import javax.enterprise.inject.Stereotype;
+import java.lang.annotation.Documented;
+import static java.lang.annotation.ElementType.TYPE;
+import java.lang.annotation.Retention;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import java.lang.annotation.Target;
+
+@Stereotype
+
+@Target(TYPE)
+@Retention(RUNTIME)
+@Documented
+public @interface ApplicationPhaseListener
 {
-    public static boolean isEmpty(String string)
-    {
-        return string == null || "".equals(string);
-    }
 }
