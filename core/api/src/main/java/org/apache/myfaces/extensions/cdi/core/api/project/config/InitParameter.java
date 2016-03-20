@@ -16,18 +16,23 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.core.api.project.config;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+import javax.inject.Qualifier;
+import java.lang.annotation.Documented;
+import static java.lang.annotation.ElementType.*;
+import java.lang.annotation.Retention;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
+import java.lang.annotation.Target;
+
+@Qualifier
+
+@Target({TYPE, METHOD, FIELD, PARAMETER})
+@Retention(RUNTIME)
+@Documented
+public @interface InitParameter
 {
-    public static boolean isEmpty(String string)
-    {
-        return string == null || "".equals(string);
-    }
+    //TODO
+
+    Class value() default InitParameter.class;
 }

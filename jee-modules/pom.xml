@@ -28,11 +28,16 @@
     <artifactId>jee-modules-project</artifactId>
 
     <name>MyFaces Extensions-CDI Java-EE-Modules</name>
+<<<<<<< HEAD
     <version>1.0.0-SNAPSHOT</version>
+=======
+    <version>1.2.1-SNAPSHOT</version>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 
     <parent>
         <groupId>org.apache.myfaces.extensions.cdi</groupId>
         <artifactId>myfaces-extcdi-parent</artifactId>
+<<<<<<< HEAD
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
@@ -40,11 +45,23 @@
         <connection>scm:svn:http://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_0_0_rc/ee-modules</connection>
         <developerConnection>scm:svn:https://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_0_0_rc/ee-modules</developerConnection>
         <url>http://svn.apache.org/viewvc/myfaces/extensions/cdi/branches/1_0_0_rc/ee-modules</url>
+=======
+        <version>1.2.1-SNAPSHOT</version>
+    </parent>
+
+    <scm>
+        <connection>scm:svn:http://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_2_1_rc/ee-modules</connection>
+        <developerConnection>scm:svn:https://svn.apache.org/repos/asf/myfaces/extensions/cdi/branches/1_2_1_rc/ee-modules</developerConnection>
+        <url>http://svn.apache.org/viewvc/myfaces/extensions/cdi/branches/1_2_1_rc/ee-modules</url>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     </scm>
 
     <modules>
         <module>jsf-module</module>
+<<<<<<< HEAD
         <module>jsf20-module</module>
+=======
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     </modules>
 
     <repositories>
@@ -61,6 +78,22 @@
             <artifactId>geronimo-jcdi_1.0_spec</artifactId>
             <version>1.0-beta</version>
         </dependency>
+<<<<<<< HEAD
     </dependencies>
 
+=======
+
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-api</artifactId>
+            <version>${jsf.version}</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+
+    <properties>
+        <jsf.version>1.2.8</jsf.version>
+    </properties>
+
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 </project>

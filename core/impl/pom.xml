@@ -27,18 +27,31 @@
     <artifactId>myfaces-extcdi-core-impl</artifactId>
 
     <name>MyFaces Extensions-CDI Core-Impl</name>
+<<<<<<< HEAD
+=======
+    <version>1.2.1-SNAPSHOT</version>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 
     <parent>
         <groupId>org.apache.myfaces.extensions.cdi.core</groupId>
         <artifactId>core-project</artifactId>
+<<<<<<< HEAD
         <version>1.0.0-SNAPSHOT</version>
+=======
+        <version>1.2.1-SNAPSHOT</version>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     </parent>
 
     <dependencies>
         <dependency>
             <groupId>org.apache.myfaces.extensions.cdi.core</groupId>
             <artifactId>myfaces-extcdi-core-api</artifactId>
+<<<<<<< HEAD
             <version>1.0.0-SNAPSHOT</version>
+=======
+            <version>1.2.1-SNAPSHOT</version>
+            <scope>compile</scope>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
         </dependency>
     </dependencies>
 

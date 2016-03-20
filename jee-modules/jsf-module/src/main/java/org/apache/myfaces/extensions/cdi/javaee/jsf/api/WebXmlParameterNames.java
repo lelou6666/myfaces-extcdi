@@ -16,18 +16,9 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.javaee.jsf.api;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+public interface WebXmlParameterNames
 {
-    public static boolean isEmpty(String string)
-    {
-        return string == null || "".equals(string);
-    }
+    public static final String PROJECT_STAGE_PARAMETER_NAME = "javax.faces.PROJECT_STAGE";
 }

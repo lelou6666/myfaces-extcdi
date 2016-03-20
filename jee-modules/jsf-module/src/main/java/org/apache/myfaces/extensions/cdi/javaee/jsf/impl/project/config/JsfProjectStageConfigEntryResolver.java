@@ -16,18 +16,20 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.javaee.jsf.impl.project.config;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+import org.apache.myfaces.extensions.cdi.core.api.project.config.InitParameterNames;
+import org.apache.myfaces.extensions.cdi.javaee.jsf.impl.util.JsfUtils;
+
+class JsfProjectStageConfigEntryResolver implements InternalKeyAwareConfigEntryResolver<String, String>
 {
-    public static boolean isEmpty(String string)
+    public boolean isResponsibleFor(String key)
     {
-        return string == null || "".equals(string);
+        return InitParameterNames.APPLICATION_PROJECT_STAGE.equals(key);
+    }
+
+    public String resolveValue()
+    {
+        return JsfUtils.getProjectStageName();
     }
 }

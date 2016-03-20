@@ -16,18 +16,19 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.javaee.jsf.impl.listener.phase;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+import javax.enterprise.context.RequestScoped;
+import javax.enterprise.inject.Produces;
+import javax.faces.context.FacesContext;
+
+@RequestScoped
+public class FacesInformationProvider
 {
-    public static boolean isEmpty(String string)
+    @Produces
+    @RequestScoped
+    protected FacesContext currentFacesContext()
     {
-        return string == null || "".equals(string);
+        return FacesContext.getCurrentInstance();
     }
 }

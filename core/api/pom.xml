@@ -27,13 +27,38 @@
     <artifactId>myfaces-extcdi-core-api</artifactId>
 
     <name>MyFaces Extensions-CDI Core-API</name>
+<<<<<<< HEAD
+=======
+    <version>1.2.1-SNAPSHOT</version>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 
     <parent>
         <groupId>org.apache.myfaces.extensions.cdi.core</groupId>
         <artifactId>core-project</artifactId>
+<<<<<<< HEAD
         <version>1.0.0-SNAPSHOT</version>
     </parent>
 
+=======
+        <version>1.2.1-SNAPSHOT</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
+            <version>1</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-interceptor_1.1_spec</artifactId>
+            <version>1.0.0-beta</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
     <build>
         <resources>
             <resource>
@@ -73,6 +98,7 @@
                     </execution>
                 </executions>
             </plugin>
+<<<<<<< HEAD
             <plugin>
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <configuration>
@@ -86,6 +112,8 @@
                     </excludes>
                 </configuration>
             </plugin>
+=======
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
         </plugins>
     </build>
 

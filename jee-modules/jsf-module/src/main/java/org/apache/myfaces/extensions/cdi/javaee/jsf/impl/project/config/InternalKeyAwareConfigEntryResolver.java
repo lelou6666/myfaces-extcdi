@@ -16,18 +16,11 @@
  * specific language governing permissions and limitations
  * under the License.
  */
-package org.apache.myfaces.extensions.cdi.core.api.util;
+package org.apache.myfaces.extensions.cdi.javaee.jsf.impl.project.config;
 
-<<<<<<< HEAD
-/**
- * @author Gerhard Petracek
- */
-=======
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
-public class StringUtils
+interface InternalKeyAwareConfigEntryResolver<K, V>
 {
-    public static boolean isEmpty(String string)
-    {
-        return string == null || "".equals(string);
-    }
+    V resolveValue();
+    
+    boolean isResponsibleFor(K key);
 }

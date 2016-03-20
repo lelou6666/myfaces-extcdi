@@ -21,50 +21,17 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<<<<<<< HEAD
+    <packaging>war</packaging>
 
-    <packaging>pom</packaging>
+    <groupId>org.apache.myfaces.extensions.cdi.examples</groupId>
+    <artifactId>examples-hello_myfaces-codi</artifactId>
 
-    <groupId>org.apache.myfaces.extensions.cdi.jee-modules</groupId>
-    <artifactId>jsf12-module-project</artifactId>
-
-    <name>MyFaces Extensions-CDI JSF 1.2 Module</name>
-    <version>1.0.0-SNAPSHOT</version>
-=======
-    <packaging>jar</packaging>
-
-    <groupId>org.apache.myfaces.extensions.cdi.jee-modules</groupId>
-    <artifactId>myfaces-extcdi-jsf-module</artifactId>
-
-    <name>MyFaces Extensions-CDI JSF Module</name>
+    <name>MyFaces Extensions-CDI examples Hello MyFaces CODI</name>
     <version>1.2.1-SNAPSHOT</version>
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 
     <parent>
-        <groupId>org.apache.myfaces.extensions.cdi.jee-modules</groupId>
-        <artifactId>jee-modules-project</artifactId>
-<<<<<<< HEAD
-        <version>1.0.0-SNAPSHOT</version>
-    </parent>
-
-    <modules>
-        <module>api</module>
-        <module>impl</module>
-    </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.apache.myfaces.core</groupId>
-            <artifactId>myfaces-api</artifactId>
-            <version>${jsf.version}</version>
-            <scope>compile</scope>
-        </dependency>
-    </dependencies>
-
-    <properties>
-        <jsf.version>1.2.8</jsf.version>
-    </properties>
-=======
+        <groupId>org.apache.myfaces.extensions.cdi.examples</groupId>
+        <artifactId>examples-project</artifactId>
         <version>1.2.1-SNAPSHOT</version>
     </parent>
 
@@ -73,39 +40,78 @@
             <groupId>org.apache.myfaces.extensions.cdi.core</groupId>
             <artifactId>myfaces-extcdi-core-api</artifactId>
             <version>1.2.1-SNAPSHOT</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
-           <groupId>javax.el</groupId>
-           <artifactId>el-api</artifactId>
-           <version>1.0</version>
-           <scope>provided</scope>
-       </dependency>
+            <groupId>org.apache.myfaces.extensions.cdi.core</groupId>
+            <artifactId>myfaces-extcdi-core-impl</artifactId>
+            <version>1.2.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.myfaces.extensions.cdi.jee-modules</groupId>
+            <artifactId>myfaces-extcdi-jsf-module</artifactId>
+            <version>1.2.1-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- TODO -->
+        <dependency>
+            <groupId>org.apache.openwebbeans</groupId>
+            <artifactId>openwebbeans-impl</artifactId>
+            <version>1.0.0-M4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.openwebbeans</groupId>
+            <artifactId>openwebbeans-jsf</artifactId>
+            <version>1.0.0-M4</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-api</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.myfaces.core</groupId>
+            <artifactId>myfaces-impl</artifactId>
+            <version>1.2.8</version>
+        </dependency>
+
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- required for tomcat -->
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-jta_1.1_spec</artifactId>
+            <version>1.1.1</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.geronimo.specs</groupId>
             <artifactId>geronimo-interceptor_1.1_spec</artifactId>
             <version>1.0.0-beta</version>
-            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.geronimo.specs</groupId>
+            <artifactId>geronimo-validation_1.0_spec</artifactId>
+            <version>1.0</version>
         </dependency>
     </dependencies>
 
     <build>
         <resources>
-            <resource>
-                <directory>src/main/config</directory>
-                <includes>
-                    <include>**/*xml</include>
-                </includes>
-                <targetPath>/META-INF</targetPath>
-            </resource>
-            <resource>
-                <directory>src/main/config</directory>
-                <includes>
-                    <include>javax.enterprise.inject.spi.Extension</include>
-                </includes>
-                <targetPath>/META-INF/services/</targetPath>
-            </resource>
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
@@ -121,6 +127,7 @@
                 </includes>
             </resource>
         </resources>
+
         <plugins>
             <plugin>
                 <inherited>true</inherited>
@@ -139,5 +146,4 @@
         </plugins>
     </build>
 
->>>>>>> refs/remotes/apache/branch_for_jsf_1_2
 </project>

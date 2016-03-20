@@ -23,6 +23,11 @@ import java.util.jar.Attributes;
 import java.net.URL;
 
 /**
+<<<<<<< HEAD
+=======
+ * keep in sync with extval!
+ *
+>>>>>>> refs/remotes/apache/branch_for_jsf_1_2
  * @author Gerhard Petracek
  */
 public class ClassUtils
